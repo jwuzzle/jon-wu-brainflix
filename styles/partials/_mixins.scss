@@ -1,0 +1,81 @@
+@use "./variables" as *;
+
+//tablet and desktop breakpoint mixins
+@mixin tablet {
+    @media screen and (min-width: $tablet-breakpoint) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media screen and (min-width: $desktop-breakpoint) {
+        @content;
+    }
+}
+
+
+//mobile font styles
+
+@mixin page-header-mobile {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 700;
+}
+
+@mixin section-header-mobile {
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 700;
+}
+
+@mixin subheader-mobile {
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 700;
+}
+
+@mixin body-copy-mobile {
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 400;
+}
+
+@mixin labels-buttons-mobile {
+    font-size: 10px;
+    line-height: 20px;
+    font-weight: 700;
+}
+
+//desktop & tablet font styles
+
+@mixin page-header {
+    font-size: 33px;
+    line-height: 44px;
+    font-weight: 700;
+}
+
+@mixin section-header {
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 700;
+}
+
+@mixin subheader {
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 700;
+}
+
+@mixin body-copy {
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+}
+
+@mixin labels-buttons {
+
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 700;
+}
+
