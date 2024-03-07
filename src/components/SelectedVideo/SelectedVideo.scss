@@ -1,0 +1,91 @@
+@use "../../../styles/partials/global";
+
+@use "../../../styles/partials/variables" as *;
+@use "../../../styles/partials/mixins" as *;
+@use "../../../styles/partials/typography" as *;
+
+.video {
+    display: flex;
+    flex-direction: column;
+
+&__image {
+    width: 100%;
+    height: 100%;
+} 
+
+&__details {
+    margin: 24px 16px 16px 16px;
+    @include body-copy-mobile;
+}
+
+&__title {
+    @include page-header-mobile;
+    margin-bottom: 16px;
+}
+
+&__subsection {
+    display: flex;
+    flex-direction: row;
+    margin: 16px 0;
+    padding: 16px 0;
+    border-top: 1px solid $secondary-color--mercury;
+    border-bottom: 1px solid $secondary-color--mercury;
+
+    &--left {
+        display: flex;
+        flex-direction: column;
+        justify-content: right;
+        width: 50%;
+    }
+
+    &--right {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+    }
+}
+
+&__author {
+    padding-bottom: 16px;
+    font-weight: 600;
+}
+
+&__date {
+    color: $primary-color--silver;
+}
+         
+&__views {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 16px;
+
+    &--icon {
+        color: $primary-color--silver;
+        padding-right: 8px;
+    }
+
+    &--count {
+        color: $primary-color--silver;
+    }
+
+}         
+           
+&__likes {
+    display: flex;
+    flex-direction: row;
+
+    &--icon {
+        color: $primary-color--silver;
+        padding-right: 8px;
+    }
+
+    &--count {
+        color: $primary-color--silver;
+    }
+}
+
+&__description {
+
+}
+
+}

@@ -1,0 +1,18 @@
+@use "../../../styles/partials/global";
+
+@use "../../../styles/partials/variables" as *;
+@use "../../../styles/partials/mixins" as *;
+@use "../../../styles/partials/typography" as *;
+
+.card-list {
+    margin: 16px;
+    border-top: 1px solid $secondary-color--mercury;
+
+    &__heading {
+        @include subheader-mobile;
+        color: $primary-color--silver;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin-top: 16px;
+    }
+}
