@@ -1,0 +1,12 @@
+@use "../styles/partials/global";
+
+@use "../styles/partials/variables" as *;
+@use "../styles/partials/mixins" as *;
+@use "../styles/partials/typography" as *;
+
+.page-bottom {
+
+    @media only screen and (min-width: $desktop-breakpoint) {
+    display: flex;
+    }
+}

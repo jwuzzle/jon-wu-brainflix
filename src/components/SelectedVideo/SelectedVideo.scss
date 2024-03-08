@@ -48,10 +48,12 @@
 &__author {
     padding-bottom: 16px;
     font-weight: 600;
+    @include body-copy-mobile;
 }
 
 &__date {
     color: $primary-color--silver;
+    @include body-copy-mobile;
 }
          
 &__views {
@@ -66,6 +68,7 @@
 
     &--count {
         color: $primary-color--silver;
+        @include body-copy-mobile;
     }
 
 }         
@@ -81,11 +84,108 @@
 
     &--count {
         color: $primary-color--silver;
+        @include body-copy-mobile;
     }
 }
 
 &__description {
-
+    @include body-copy-mobile;
 }
 
+@media only screen and (min-width: $tablet-breakpoint) {
+    
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+
+    &__image {
+        width: 90%;
+    }
+
+    &__details {
+        margin: 36px 36px 24px 36px;
+        @include body-copy;
+    }
+
+    &__title {
+        @include page-header;
+        margin-bottom: 16px;
+    }
+
+    &__subsection {
+        padding: 0 0 10px 0;
+        margin: 0;
+        border-top: none;
+
+        &--left {
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            width: 50%;
+        }
+    
+        &--right {
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: center;
+            width: 50%;
+        }
+    }
+
+    &__author {
+        padding-bottom: 0;
+        margin-right: 24px;
+        @include body-copy;
+        
+    }
+    
+    &__date {
+        @include body-copy;
+    }
+
+    &__views {
+        display: flex;
+        flex-direction: row;
+        padding-bottom: 0;
+        margin-right: 24px;
+    
+        &--icon {
+            color: $primary-color--silver;
+            padding-right: 8px;
+        }
+    
+        &--count {
+            color: $primary-color--silver;
+            @include body-copy;
+        }
+    
+    }         
+               
+    &__likes {
+        display: flex;
+        flex-direction: row;
+    
+        &--icon {
+            color: $primary-color--silver;
+            padding-right: 8px;
+        }
+    
+        &--count {
+            color: $primary-color--silver;
+            @include body-copy;
+        }
+    }
+    
+    &__description {
+        margin-top: 24px;
+        @include body-copy;
+    }
+}
+    @media only screen and (min-width: $desktop-breakpoint) {
+
+    &__image {
+        width: 90%;
+    }
+
+}
 }

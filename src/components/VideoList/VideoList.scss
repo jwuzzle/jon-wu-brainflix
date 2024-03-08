@@ -15,4 +15,9 @@
         text-transform: uppercase;
         margin-top: 16px;
     }
+
+    @media only screen and (min-width: $tablet-breakpoint) {
+        margin: 24px 36px 36px 36px;
+    }
+
 }
