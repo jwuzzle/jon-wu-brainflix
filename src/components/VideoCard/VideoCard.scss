@@ -31,4 +31,16 @@
     &__author {
         @include body-copy-mobile;
     }
+
+    @media only screen and (min-width: $tablet-breakpoint) {
+
+        &__image {
+            width: 15vw;
+        }
+
+        &__copy {
+            width: 22vw;
+        }
+    }
+    
 }

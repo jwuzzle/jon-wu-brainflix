@@ -6,7 +6,6 @@
 
 .card-list {
     margin: 16px;
-    border-top: 1px solid $secondary-color--mercury;
 
     &__heading {
         @include subheader-mobile;
@@ -18,6 +17,12 @@
 
     @media only screen and (min-width: $tablet-breakpoint) {
         margin: 24px 36px 36px 36px;
+    }
+
+    @media only screen and (min-width: $desktop-breakpoint) {
+        margin: 24px 36px 36px 36px;
+        border-left: 1px solid $secondary-color--mercury;
+        padding-left: 24px;
     }
 
 }

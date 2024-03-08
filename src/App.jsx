@@ -33,6 +33,8 @@ function App() {
       <SelectedVideo selectedVideo={selectedVideo} />
       <div className="page-bottom">
         <SelectedVideoDetails selectedVideo={selectedVideo} />
+        {/* <ReviewForm />
+        <Reviews /> */}
         <VideoList
           filteredNextVideos={filteredNextVideos}
           handleVideoClick={handleVideoClick}
