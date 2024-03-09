@@ -4,6 +4,8 @@ import Header from "./components/Header/Header";
 import VideoList from "./components/VideoList/VideoList";
 import SelectedVideo from "./components/SelectedVideo/SelectedVideo";
 import SelectedVideoDetails from "./components/SelectedVideoDetails/SelectedVideoDetails";
+import VideoReviewForm from "./components/VideoReviewForm/VideoReviewForm";
+import VideoReviews from "./components/VideoReviews/VideoReviews";
 import videoDetails from "./data/video-details.json";
 import videos from "./data/videos.json";
 
@@ -33,8 +35,8 @@ function App() {
       <SelectedVideo selectedVideo={selectedVideo} />
       <div className="page-bottom">
         <SelectedVideoDetails selectedVideo={selectedVideo} />
-        {/* <ReviewForm />
-        <Reviews /> */}
+        <VideoReviewForm selectedVideo={selectedVideo} />
+        <VideoReviews selectedVideo={selectedVideo} /> 
         <VideoList
           filteredNextVideos={filteredNextVideos}
           handleVideoClick={handleVideoClick}

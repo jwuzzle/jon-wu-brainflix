@@ -1,0 +1,65 @@
+@use "../../../styles/partials/global";
+
+@use "../../../styles/partials/variables" as *;
+@use "../../../styles/partials/mixins" as *;
+@use "../../../styles/partials/typography" as *;
+
+li {
+    list-style-type: none;
+}
+
+.reviews {
+    margin: 16px 16px;
+    border-top: .5px solid $secondary-color--mercury;
+    border-bottom: .5px solid $secondary-color--mercury;
+    @include body-copy-mobile;
+    display: flex;
+    flex-direction: column;
+
+    &__section {
+        display: flex;
+        flex-direction: row;
+        border-top: .5px solid $secondary-color--mercury;
+        border-bottom: .5px solid $secondary-color--mercury;
+    }
+
+    &__avatar {
+        min-width: 2.25rem;
+        height: 2.25rem;
+        border-radius: 50%;
+        margin: 1rem 1rem 0 0;
+        background-color: $secondary-color--mercury;
+    }
+    
+    &__avatar {
+
+    }
+
+    &__data {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__top {
+        display: flex;
+        padding: 16px 0;
+        justify-content: space-between;
+    }
+
+    &__name {
+
+    }
+
+    &__date {
+      
+    }
+
+
+    &__comment {
+        padding-bottom: 16px;
+        
+    }
+
+}
+
+

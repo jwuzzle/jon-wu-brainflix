@@ -1,0 +1,76 @@
+@use "../../../styles/partials/global";
+
+@use "../../../styles/partials/variables" as *;
+@use "../../../styles/partials/mixins" as *;
+@use "../../../styles/partials/typography" as *;
+
+.comments-form {
+    display: flex;
+    flex-direction: column;
+    margin: 0 16px;
+
+    &__heading {
+       @include body-copy-mobile;
+       font-weight: 600; 
+    }
+    
+    &__section {
+        display: flex;
+        flex-direction: row;
+    }
+
+    &__avatar-container {
+        min-width: 2.25rem;
+        height: 2.25rem; 
+        border-radius: 50%;
+        margin: 1.125rem 1rem 0 0;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    &__avatar {
+        width: 3.0625rem;
+        height: 2.5rem;
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+    }
+
+    &__new-entry {
+        display: flex;
+        flex-direction: column;  
+        width: -webkit-fill-available;
+    }
+
+    &__field {
+        display: flex;
+        flex-direction: column;   
+    }
+
+    &__field-name {
+        @include subheader-mobile;
+        color: $primary-color--silver;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin: 16px 0 8px 0;
+        width: -webkit-fill-available; 
+    }
+
+    &__button {
+        height: 40px; 
+        width: -webkit-fill-available;
+        background-color: $primary-color--blue;
+        border: 1px solid $primary-color--blue;
+        color: $primary-color--white;
+        border-radius: 4px;
+        background-image: url('../../assets/icons/upload.svg');
+        background-repeat: no-repeat;
+        background-position: 12px 50%;
+        text-transform: uppercase;
+        @include labels-buttons-mobile;
+        font-size: 13px;
+        font-weight: 600;
+        margin-top: 16px;
+    }
+
+}

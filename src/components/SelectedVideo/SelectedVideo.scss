@@ -46,9 +46,9 @@
 }
 
 &__author {
+    @include body-copy-mobile;
     padding-bottom: 16px;
     font-weight: 600;
-    @include body-copy-mobile;
 }
 
 &__date {
