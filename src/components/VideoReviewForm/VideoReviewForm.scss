@@ -12,18 +12,18 @@
     &__heading {
        @include body-copy-mobile;
        font-weight: 600; 
+       margin-bottom: 1rem;
     }
     
     &__section {
         display: flex;
-        flex-direction: row;
     }
 
     &__avatar-container {
         min-width: 2.25rem;
         height: 2.25rem; 
         border-radius: 50%;
-        margin: 1.125rem 1rem 0 0;
+        margin: 22px 1rem 0 0;
         overflow: hidden;
         position: relative;
     }
@@ -32,7 +32,6 @@
         width: 3.0625rem;
         height: 2.5rem;
         background-size: cover;
-        background-position: center;
         position: absolute;
     }
 
@@ -52,25 +51,118 @@
         color: $primary-color--silver;
         font-weight: 600;
         text-transform: uppercase;
-        margin: 16px 0 8px 0;
-        width: -webkit-fill-available; 
+        margin-bottom: 4px;
+    }
+
+    &__field-area {
+        height: 70px; 
+        background-color: $secondary-color--alabaster;
+        border: 1px solid $secondary-color--mercury;
+        border-radius: 4px;
+    }
+
+    &__submit {
+        margin-top: 1rem;
     }
 
     &__button {
         height: 40px; 
         width: -webkit-fill-available;
         background-color: $primary-color--blue;
-        border: 1px solid $primary-color--blue;
+        border: none;
         color: $primary-color--white;
         border-radius: 4px;
-        background-image: url('../../assets/icons/upload.svg');
+        background-image: url('../../assets/icons/add_comment.svg');
         background-repeat: no-repeat;
         background-position: 12px 50%;
+        background-size: 18px;
         text-transform: uppercase;
         @include labels-buttons-mobile;
         font-size: 13px;
         font-weight: 600;
-        margin-top: 16px;
     }
 
+    @media only screen and (min-width: $tablet-breakpoint) {
+        margin: 0 36px;
+    
+        &__heading {
+           @include body-copy;
+           font-weight: 600; 
+           margin-bottom: 24px;
+        }
+        
+        &__section {
+            align-items: center;
+        }
+    
+        &__avatar-container {
+            min-width: 40px;
+            height: 40px;
+            margin: 22px 24px 0 0;
+        }
+    
+        &__new-entry {
+            flex-direction: row;  
+        }
+    
+        &__field {
+            margin-right: 24px;
+            width: -webkit-fill-available; 
+        }
+    
+        &__field-name {
+            @include labels-buttons;
+            font-weight: 600;
+        }
+    
+        &__field-area {
+            height: 40px; 
+            width: -webkit-fill-available; 
+            box-sizing: border-box;
+        }
+    
+        &__submit {
+            margin-top: 24px;
+        }
+    
+        &__button {
+            width: 150px;
+            @include labels-buttons;
+            font-weight: 600;
+            background-size: 16px;
+        }
+    }
+
+    @media only screen and (min-width: $desktop-breakpoint) {
+        margin: 0 24px 0 9.375rem;
+    }
+}
+
+textarea[type="text"] {
+    @include body-copy-mobile;
+    color: $primary-color--black;
+    padding: 12px;
+
+    @media only screen and (min-width: $tablet-breakpoint) {
+        @include body-copy;
+        box-sizing: border-box;
+        padding: 0 0 0 16px;
+        padding-top: 6px;
+    }
+}
+
+textarea::placeholder {
+    @include body-copy-mobile;
+    color: $primary-color--black;
+    transform: translateY(10%);
+    
+    @media only screen and (min-width: $tablet-breakpoint) {
+        @include body-copy;
+        transform: translateY(10%);
+    }
+}
+
+textarea[type=text]:focus {
+    border: 2px solid $primary-color--blue;
+    outline: none;
 }

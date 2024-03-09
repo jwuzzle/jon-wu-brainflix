@@ -11,10 +11,3 @@ button:hover {
     background-color: $secondary-color--darkblue;
 }
 
-textarea[type=text]:focus {
-    border: 2px solid $primary-color--blue;
-  }
-
-textarea[type=text]:required {
-    border-color: 1px solid #D22D2D;
-  }

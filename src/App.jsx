@@ -34,13 +34,17 @@ function App() {
       <Header />
       <SelectedVideo selectedVideo={selectedVideo} />
       <div className="page-bottom">
-        <SelectedVideoDetails selectedVideo={selectedVideo} />
-        <VideoReviewForm selectedVideo={selectedVideo} />
-        <VideoReviews selectedVideo={selectedVideo} /> 
-        <VideoList
-          filteredNextVideos={filteredNextVideos}
-          handleVideoClick={handleVideoClick}
-        />
+        <div className="page-bottom__left">
+          <SelectedVideoDetails selectedVideo={selectedVideo} />
+          <VideoReviewForm selectedVideo={selectedVideo} />
+          <VideoReviews selectedVideo={selectedVideo} /> 
+        </div>
+        <div className="page-bottom__right">
+          <VideoList
+            filteredNextVideos={filteredNextVideos}
+            handleVideoClick={handleVideoClick}
+          />
+        </div>
       </div>
     </>
   );

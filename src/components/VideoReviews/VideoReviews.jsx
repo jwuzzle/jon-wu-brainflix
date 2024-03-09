@@ -7,8 +7,8 @@ const VideoReviews = ( {selectedVideo} ) => {
     "en-US");
 
   return (
-    <div>
-    <ul className="reviews">
+    <div className="reviews">
+    <ul className="reviews__list">
     {selectedVideo.comments.map((video) => (
         <li className="reviews__section" key={video.id}>
             <div className="reviews__avatar-container">
