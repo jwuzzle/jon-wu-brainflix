@@ -8,113 +8,123 @@
 .navbar {
     display: flex;
     flex-direction: column;
-    margin: 16px;
+    margin: 1rem;
 
     &__logo-container {
         display: flex;
         justify-content: center;
-        margin-bottom: 16px
+        margin-bottom: 1rem;
     }
 
     &__logo {
-        height: 25px;
-        width: 120px;
+        height: 1.5625rem;
+        width: 7.5rem;
     }
 
     &__features {
         display: flex;
         flex-direction: column;
-        overflow: hidden;
     }
 
     &__search-bar {
-        height: 36px;
-        width: 61vw;
-        border-radius: 4px;
-        border: 1px solid $secondary-color--mercury;
+        height: 2.25rem;
+        border-radius: 0.25rem;
+        border: 0.0625rem solid $secondary-color--mercury;
         background-image: url('../../assets/icons/search.svg');
         background-repeat: no-repeat;
-        background-position: 12px 50%;
+        background-position: 0.75rem 50%;
+        background-size: 1rem;
         background-color: $secondary-color--alabaster;
         color: $primary-color--black;
-        padding-left: 42px;
+        padding-left: 2.625rem;
+        margin-right: 3.25rem;
         @include body-copy-mobile;
     }
 
     &__search-button {
-        height: 40px;
-        border-radius: 4px;
+        height: 2.5rem;
+        border-radius: 0.25rem;
         background-color: $primary-color--blue;
         color: $primary-color--white;
-        border: 1px solid $primary-color--blue;
+        border: none;
         background-image: url('../../assets/icons/upload.svg');
         background-repeat: no-repeat;
-        background-position: 12px 50%;
+        background-position: 0.75rem 50%;
+        background-size: 1.25rem;
         text-transform: uppercase;
         @include labels-buttons-mobile;
-        font-size: 13px;
+        font-size: 0.75rem;
         font-weight: 600;
-        margin-top: 16px;
+        margin-top: 1rem;
     }
 
     &__profile {
         display: flex;
+        min-width: 2.25rem;
+        height: 2.25rem;
+        border-radius: 50%;
+        overflow: hidden;
         position: absolute;
-        right: 16px;
+        right: 1rem;
     }
 
     &__profile-picture {
-        width: 36px;
-        height: 36px;
-        border-radius: 50%;
-        background-color: $secondary-color--mercury;
+        width: 3.0625rem;
+        height: 2.5rem;
+        position: absolute;
     }
 
     @media only screen and (min-width: $tablet-breakpoint) {
-        margin: 24px 36px;
+        margin: 1.5rem 2.25rem;
         flex-direction: row;
         align-items: center;
 
         &__logo-container {
-            justify-content: flex-start;
-            margin-bottom: 0px;
+            margin-bottom: 0;
         }
 
         &__features {
-            display: flex;
             flex-direction: row;
             width: -webkit-fill-available;
-            overflow: hidden;
             align-items: center;
-            justify-content: flex-end;  
+            justify-content: flex-end;
         }
 
         &__search-bar {
-            margin-right: 24px;
-            height: 40px;
-            width: 200px;
+            margin-right: 1.5rem;
+            height: 2.5rem;
+            width: 15.125rem;
             @include body-copy;
         }
 
         &__search-button {
-            margin: 0 24px 0 0;
-            width: 150px;
+            margin: 0 1.5rem 0 0;
+            width: 9.375rem;
             @include labels-buttons;
             font-weight: 600;
         }
 
         &__profile {
-            position: static;
-        }
-
-        &__profile-picture {
-            width: 40px;
-            height: 40px;
+            position: relative;
+            min-width: 2.5rem;
+            height: 2.5rem;
+            right: -0.0625rem;
         }
     }
 
     @media only screen and (min-width: $desktop-breakpoint) {
-        margin: 24px 9.375rem;
+        margin: 1.5rem 9.375rem;
+    }
+}
+
+input[type=text] {
+    @include body-copy-mobile;
+    color: $primary-color--black;
+
+    @media only screen and (min-width: $tablet-breakpoint) {
+        @include body-copy;
+        box-sizing: border-box;
+        padding-left: 2.25rem;
     }
 }
 
@@ -127,244 +137,7 @@ input::placeholder {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* .navbar {
-    display: flex;
-    flex-direction: column;
-    margin: 0 16px;
-    align-items: center;
-
-    &__logo {
-        height: 25px;
-        width: 125px;
-        padding: 16px;
-    }
-
-    &__search-profile {
-        display: flex;
-        flex-direction: row;
-    }
-
-    &__search {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        flex: 1;
-        margin-left: 16px;
-    }
-
-        &__search-bar {
-            flex: 1;
-            height: 36px;
-            border-radius: 4px;
-            border: 1px solid $secondary-color--mercury;
-            background-image: url('../../assets/icons/search.svg');
-            background-repeat: no-repeat;
-            background-position: 12px 50%;
-            background-color: $secondary-color--alabaster;
-            color: $primary-color--black;
-            padding-left: 42px;
-            @include body-copy-mobile;
-        }
-
-        &__button {
-            background-color: $primary-color--blue;
-            border-radius: 4px;
-            height: 40px;
-            color: $primary-color--white;
-            border: 1px solid $primary-color--blue;
-            text-transform: uppercase;
-            @include labels-buttons-mobile;
-            font-size: 13px;
-            margin-left: 16px;
-        }
-    
-
-    &__pcontainer {
-        width: 36px;
-        height: 36px;
-        border-radius: 50%;
-        overflow: hidden;
-        margin-left: 16px;
-
-        &--picture {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-    }
-
-    /* &__search {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-    }
-
-    &__search-profile {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        width: 100%;
-        align-items: center;
-    }
-
-    &__search-bar {
-        width: 66%;
-        height: 36px;
-        border-radius: 4px;
-        border: 1px solid $secondary-color--mercury;
-        background-image: url('../../assets/icons/search.svg');
-        background-repeat: no-repeat;
-        background-position: 12px 50%;
-        margin-bottom: 16px;
-        background-color: $secondary-color--alabaster;
-        color: $primary-color--black;
-        @include body-copy-mobile;
-        padding-left: 42px;
-    }
-
-    &__button {
-        background-color: $primary-color--blue;
-        border-radius: 4px;
-        height: 40px;
-        color: $primary-color--white;
-        border: 1px solid $primary-color--blue;
-        width: 100%;
-        background-image: url('../../assets/icons/upload.svg');
-        background-repeat: no-repeat;
-        background-position: 12px 50%;
-        text-transform: uppercase;
-        @include labels-buttons-mobile;
-        font-size: 13px;
-    }
-
-    &__pcontainer {
-        min-width: 2.25rem;
-        height: 2.25rem;
-        border-radius: 50%;
-        margin: 0 0 1rem 15.6rem;
-        overflow: hidden;
-        position: absolute;
-
-        &--picture {
-            width: 50px;
-            height: 2.5rem;
-            background-size: cover;
-            background-position: center;
-            position: absolute;
-        }
-    } */
-
-    /* @media only screen and (min-width: $tablet-breakpoint) {
-        flex-direction: row;
-        margin: 0 36px;
-
-        &__logo {
-            padding: 0px;
-        }
-
-        &__search {
-            display: flex;
-            flex-direction: row;
-            width: auto;
-            padding-left: 53px;
-            align-items: center;
-        }
-
-        &__search-profile {
-            display: flex;
-            flex-direction: row;
-            margin: 24px 0;
-            width: 0%;
-        }
-
-        &__search-bar {
-            width: 240px;
-            position: unset;
-            margin-bottom: 0;
-            height: 40px;
-            @include body-copy;
-        }
-
-        &__button {
-            width: 150px;
-            margin-left: 24px;
-        }
-
-        &__pcontainer {
-            margin: 0 0 0 24px;
-            position: unset;
-
-            &--picture {
-                position: unset;
-            }
-        }
-    }
-
-    @media only screen and (min-width: $desktop-breakpoint) {
-        flex-direction: row;
-        margin: 0 9.375rem;
-
-        &__logo {
-            padding: 0px;
-        }
-
-        &__search {
-            display: flex;
-            flex-direction: row;
-            width: auto;
-            padding-left: 337px;
-            align-items: center;
-        }
-
-        &__search-profile {
-            display: flex;
-            flex-direction: row;
-            margin: 24px 0;
-            width: 0%;
-        }
-
-        &__search-bar {
-            width: 240px;
-            position: unset;
-            margin-bottom: 0;
-            height: 40px;
-        }
-
-        &__button {
-            width: 150px;
-            margin-left: 24px;
-        }
-
-        &__pcontainer {
-            margin: 0 0 0 24px;
-            position: unset;
-
-            &--picture {
-                position: unset;
-            }
-        }
-    }
+input[type=text]:focus {
+    border: 0.125rem solid $primary-color--blue;
+    outline: none;
 }
-
-input::placeholder {
-    color: $primary-color--black;
-    @include body-copy-mobile;
-} */ 

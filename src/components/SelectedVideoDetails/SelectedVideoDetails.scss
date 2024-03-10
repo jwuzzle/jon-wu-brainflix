@@ -1,0 +1,133 @@
+@use "../../../styles/partials/global";
+
+@use "../../../styles/partials/variables" as *;
+@use "../../../styles/partials/mixins" as *;
+@use "../../../styles/partials/typography" as *;
+
+
+.video-details {
+    margin: 1.5rem 1rem 1rem 1rem;
+    @include body-copy-mobile;
+
+    &__title {
+        @include page-header-mobile;
+    }
+
+    &__subsection {
+        display: flex;
+        flex-direction: row;
+        margin: 1rem 0;
+        padding: 1rem 0;
+        border-top: 0.0625rem solid $secondary-color--mercury;
+        border-bottom: 0.0625rem solid $secondary-color--mercury;
+
+        &--left {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+        }
+
+        &--right {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+        }
+    }
+
+    &__author {
+        padding-bottom: 1rem;
+        font-weight: 600;
+    }
+
+    &__date {
+        color: $primary-color--silver;
+    }
+
+    &__views {
+        display: flex;
+        padding-bottom: 1rem;
+
+        &--icon {
+            color: $primary-color--silver;
+            padding-right: 0.5rem;
+        }
+
+        &--count {
+            color: $primary-color--silver;
+        }
+
+    }
+
+    &__likes {
+        display: flex;
+
+        &--icon {
+            color: $primary-color--silver;
+            padding-right: 0.5rem;
+        }
+
+        &--count {
+            color: $primary-color--silver;
+        }
+    }
+
+    @media only screen and (min-width: $tablet-breakpoint) {
+        margin: 2.25rem 2.25rem 1.5rem 2.25rem;
+        @include body-copy;
+
+        &__title {
+            @include page-header;
+        }
+
+        &__subsection {
+            padding: 1rem 0 0.625rem 0;
+            margin: 0;
+            border-top: none;
+
+            &--left {
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: center;
+            }
+
+            &--right {
+                flex-direction: row;
+                justify-content: flex-end;
+                align-items: center;
+            }
+        }
+
+        &__author {
+            padding-bottom: 0;
+            margin-right: 1.5rem;
+        }
+
+        &__views {
+            flex-direction: row;
+            padding-bottom: 0;
+            margin-right: 1.5rem;
+        }
+
+        &__likes {
+            flex-direction: row;
+        }
+
+        &__description {
+            margin-top: 1.5rem;
+        }
+    }
+
+    @media only screen and (min-width: $desktop-breakpoint) {
+        margin: 2.25rem 0 0 0;
+        @include body-copy;
+
+        &__subsection {
+            padding: 1rem 1.5rem 0.625rem 0;
+        }
+        
+        &__description {
+            padding-right: 1.5rem;
+        }
+
+    }
+}

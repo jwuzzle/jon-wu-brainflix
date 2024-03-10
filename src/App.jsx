@@ -11,7 +11,6 @@ import videos from "./data/videos.json";
 
 function App() {
   const [selectedVideo, setSelectedVideo] = useState(videoDetails[0]);
-  /* console.log(selectedVideo); */
 
   const handleVideoClick = (selectedMainVideo) => {
     const mainVideoDetails = videoDetails.find(
@@ -20,14 +19,11 @@ function App() {
     setSelectedVideo(mainVideoDetails);
   };
 
-  /* const videoPreview = videos;  */
   const [nextVideos, setNextVideos] = useState(videos);
-  /* console.log(nextVideos); */
 
   const filteredNextVideos = nextVideos.filter(
     (video) => video.id !== selectedVideo.id
   );
-  /* console.log(filteredNextVideos); */
 
   return (
     <>
@@ -37,7 +33,7 @@ function App() {
         <div className="page-bottom__left">
           <SelectedVideoDetails selectedVideo={selectedVideo} />
           <VideoReviewForm selectedVideo={selectedVideo} />
-          <VideoReviews selectedVideo={selectedVideo} /> 
+          <VideoReviews selectedVideo={selectedVideo} />
         </div>
         <div className="page-bottom__right">
           <VideoList
@@ -51,5 +47,3 @@ function App() {
 }
 
 export default App;
-
-//pass down the function setSelectedVideo to change the selectedVideo variable to the one the user clicked.

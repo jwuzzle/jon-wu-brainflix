@@ -6,41 +6,52 @@
 
 
 .card {
+    @include body-copy-mobile;
 
-    margin: 16px 0;
+    margin: 1rem 0;
     display: flex;
 
     &__image {
-        width: 39%;
+        width: 38%;
         height: 100%;
-        border-radius: 4px;
+        border-radius: 0.25rem;
     }
 
     &__copy {
         display: flex;
         flex-direction: column;
-        margin-left: 16px;
+        margin-left: 1rem;
         justify-content: space-between;
     }
 
     &__title {
-        @include body-copy-mobile;
         font-weight: 600;
     }
 
-    &__author {
-        @include body-copy-mobile;
-    }
 
     @media only screen and (min-width: $tablet-breakpoint) {
+        @include body-copy;
 
         &__image {
             width: 15vw;
         }
 
         &__copy {
-            width: 22vw;
+            width: 24vw;
         }
     }
-    
+
+    @media only screen and (min-width: $desktop-breakpoint) {
+        margin: 0;
+        padding: 0.75rem 0;
+
+        &__image {
+            width: 10vw;
+        }
+
+        &__copy {
+            width: 20vw;
+        }
+    }
+
 }

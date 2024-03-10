@@ -6,14 +6,19 @@
 
 .page-bottom {
 
-    
-
     @media only screen and (min-width: $desktop-breakpoint) {
-    display: flex;
-
-    &__left {
+        margin: 0 9.375rem;
         display: flex;
-        flex-direction: column;
+
+        &__left {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &__right {
+            width: 27vw;
+        }
     }
-    }
+
+
 }

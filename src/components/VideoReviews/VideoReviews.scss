@@ -11,15 +11,14 @@ li {
 .reviews {
     @include body-copy-mobile;
     color: $primary-color--black;
-    border-top: 1px solid $secondary-color--mercury;
-    margin: 16px 16px;
+    border-top: 0.0625rem solid $secondary-color--mercury;
+    margin: 1rem 1rem;
     display: flex;
     flex-direction: column;
 
     &__section {
-        border-bottom: 1px solid $secondary-color--mercury;
+        border-bottom: 0.0625rem solid $secondary-color--mercury;
         display: flex;
-        flex-direction: row;
     }
 
     &__avatar-container {
@@ -33,10 +32,11 @@ li {
     &__data {
         display: flex;
         flex-direction: column;
+        width: -webkit-fill-available;
     }
 
     &__top {
-        margin: 16px 0;
+        margin: 1rem 0;
         display: flex;
         justify-content: space-between;
     }
@@ -46,55 +46,45 @@ li {
     }
 
     &__date {
-      color: $primary-color--silver;
+        color: $primary-color--silver;
     }
 
 
     &__comment {
-        margin-bottom: 16px;
+        margin-bottom: 1rem;
     }
 
     @media only screen and (min-width: $tablet-breakpoint) {
         @include body-copy;
-        margin: 24px 36px;
-    
-        &__section {
-            
-        }
-    
+        margin: 1.5rem 2.25rem;
+
         &__avatar-container {
-            min-width: 40px;
-            height: 40px;
-            margin: 24px 24px 0 0;
+            min-width: 2.5rem;
+            height: 2.5rem;
+            margin: 1.5rem 1.5rem 0 0;
         }
-    
-        &__data {
-        }
-    
+
         &__top {
-            margin: 24px 0 4px;
+            margin: 1.5rem 0 0.25rem;
         }
-    
-        &__name {
-            font-weight: 600;
-        }
-    
-        &__date {
-        }
-    
+
         &__comment {
-            margin-bottom: 24px;
+            margin-bottom: 1.5rem;
         }
     }
 
     @media only screen and (min-width: $desktop-breakpoint) {
-        margin: 24px 0 0 9.375rem;
+        margin: 1.5rem 0 0 0;
+        border-top: none;
 
         &__data {
-            margin: 0 24px 0 0;
+            margin: 0 1.5rem 0 0;
+        }
+
+        &__section {
+            border-top: 0.0625rem solid $secondary-color--mercury;
+            border-bottom: none;
         }
     }
 
 }
-
-

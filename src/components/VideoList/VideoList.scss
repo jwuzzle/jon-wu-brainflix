@@ -5,24 +5,27 @@
 @use "../../../styles/partials/typography" as *;
 
 .card-list {
-    margin: 16px;
+    margin: 1rem;
 
     &__heading {
         @include subheader-mobile;
         color: $primary-color--silver;
         font-weight: 600;
         text-transform: uppercase;
-        margin-top: 16px;
     }
 
     @media only screen and (min-width: $tablet-breakpoint) {
-        margin: 24px 36px 36px 36px;
+        margin: 1.5rem 2.25rem;
     }
 
     @media only screen and (min-width: $desktop-breakpoint) {
-        margin: 24px 36px 36px 36px;
-        border-left: 1px solid $secondary-color--mercury;
-        padding-left: 24px;
+        margin: 0;
+        border-left: 0.0625rem solid $secondary-color--mercury;
+        padding: 0 0 1.5rem 1.5rem;
+
+        &__heading {
+            padding-top: 2.25rem;
+        }
     }
 
 }
