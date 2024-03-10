@@ -127,6 +127,7 @@
         &__button {
             width: 9.375rem;
             @include labels-buttons;
+            font-weight: 600;
         }
     }
 
