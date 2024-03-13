@@ -11,8 +11,8 @@ const MainVideoPage = () => {
   const [mainVideo, setMainVideo] = useState(null);
   let { videoId } = useParams();
 
-  if(!videoId) {
-    videoId = '84e96018-4022-434e-80bf-000ce4cd12b8'
+  if (!videoId) {
+    videoId = "84e96018-4022-434e-80bf-000ce4cd12b8";
   }
 
   //API Call #1 for all details of a video, uses video Id
@@ -22,32 +22,25 @@ const MainVideoPage = () => {
         `https://unit-3-project-api-0a5620414506.herokuapp.com/videos/${videoId}?api_key=d76a25f6-c65b-49f6-96fa-5d82d3c84842`
       );
       console.log("this is the data for one video:", detailsResponse.data);
-      /* onst mainVideoDetails = detailsResponse.find(
-        (video) => video.id === videoId */
-     /*  ); */
       setMainVideo(detailsResponse.data);
     } catch (error) {
       console.log(error);
     }
   };
-  /* fetchVideoDetails() */
-  /*   console.log(mainVideo); */
-  /* useEffect(() => {
-    fetchVideoDetails();
-  }, []); */
 
   useEffect(() => {
     fetchVideoDetails();
-  }, []);
- 
+  }, [videoId]);
 
   //API Call #2 for video list, uses video Id
+  const [nextVideos, setNextVideos] = useState([]);
   const fetchVideos = async () => {
     try {
       const response = await axios.get(
         "https://unit-3-project-api-0a5620414506.herokuapp.com/videos?api_key=d76a25f6-c65b-49f6-96fa-5d82d3c84842"
       );
       console.log("this is the video api data:", response.data);
+      setNextVideos(response.data);
     } catch (error) {
       console.log(error);
     }
@@ -57,15 +50,13 @@ const MainVideoPage = () => {
     fetchVideos();
   }, []);
 
-  const [nextVideos, setNextVideos] = useState([]);
-
   const filteredNextVideos = nextVideos.filter(
     (video) => video.id !== mainVideo.id
   );
 
-  if(!mainVideo) return ("")
-  
-    return (
+  if (!mainVideo) return ""; //ensure pages waits until there is a mainVideo from the api call before it renders 
+
+  return (
     <>
       <SelectedVideo mainVideo={mainVideo} />
       <div className="page-bottom">

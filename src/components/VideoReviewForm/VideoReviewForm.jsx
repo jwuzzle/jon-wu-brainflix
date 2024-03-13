@@ -3,13 +3,13 @@ import "./VideoReviewForm.scss";
 import profilePicture from "../../assets/images/Mohan-muruge.jpg";
 
 const VideoReviewForm = ({ mainVideo }) => {
-  /* const commentsArr = selectedVideo.comments.filter((video) => video.id !== "");
-  const commentsArrlength = commentsArr.length;
-  /* console.log(commentsArrlength); */ 
+ const commentsArr = mainVideo.comments.filter((video) => video.id !== "");
+const commentsArrlength = commentsArr.length;
+console.log(commentsArrlength);
 
   return (
     <div className="comments-form">
-      <p className="comments-form__heading">{/* commentsArrlength */} Comments</p>
+      <p className="comments-form__heading">{commentsArrlength} Comments</p>
       <div className="comments-form__section">
         <div className="comments-form__avatar-container">
           <img className="comments-form__avatar" src={profilePicture} />
