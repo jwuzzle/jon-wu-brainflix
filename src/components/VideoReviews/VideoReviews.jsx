@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import "./VideoReviews.scss";
 
-const VideoReviews = ({ selectedVideo }) => {
+const VideoReviews = ({ mainVideo }) => {
 
   return (
     <div className="reviews">
       <ul className="reviews__list">
-        {selectedVideo.comments.map((video) => (
+        {mainVideo.comments.map((video) => (
           <li className="reviews__section" key={video.id}>
             <div className="reviews__avatar-container">
               <img className="reviews__avatar" />

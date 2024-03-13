@@ -1,16 +1,20 @@
 import "./SelectedVideo.scss";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
-const VideoDetails = ({ selectedVideo }) => {
+
+
+const SelectedVideo = ({ mainVideo }) => {
+
   return (
     <div className="video">
       <video
         className="video__image"
         controls
-        poster={selectedVideo.image}
+        poster={mainVideo.image}
       ></video>
     </div>
   );
 };
 
-export default VideoDetails;
+export default SelectedVideo;

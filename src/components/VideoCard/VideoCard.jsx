@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import "./VideoCard.scss";
 
-const VideoCard = ({ image, title, author, video, handleVideoClick }) => {
+const VideoCard = ({ image, title, author, video }) => {
   return (
     <div>
-      <div className="card" onClick={() => handleVideoClick(video)}>
+      <div className="card">
         <img className="card__image" src={image} alt={`${title}`} />
         <div className="card__copy">
           <p className="card__title">{title}</p>
