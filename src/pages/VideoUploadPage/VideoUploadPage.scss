@@ -1,0 +1,232 @@
+@use "../../../styles/partials/global";
+
+@use "../../../styles/partials/variables" as *;
+@use "../../../styles/partials/mixins" as *;
+@use "../../../styles/partials/typography" as *;
+
+.upload {
+    display: flex;
+    flex-direction: column;
+    @include body-copy-mobile;
+    padding: 24px 16px 16px 16px;
+    border-top: 1px solid $secondary-color--mercury;
+
+    &__header {
+        @include page-header-mobile;
+        margin-bottom: 16px;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+
+        &--label {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 0.25rem;
+            @include labels-buttons-mobile;
+            color: $primary-color--silver;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        &--image {
+            margin-bottom: 1rem;
+        }
+
+        &--single-field {
+            height: 2.25rem;
+            border-radius: 0.25rem;
+            border: 0.0625rem solid $secondary-color--mercury;
+            background-color: $secondary-color--alabaster;
+            color: $primary-color--black;
+            margin-bottom: 1rem;
+            padding-left: 12px;
+
+        }
+
+        &--multiple-field {
+            height: 4.375rem;
+            background-color: $secondary-color--alabaster;
+            border: 0.0625rem solid $secondary-color--mercury;
+            border-radius: 0.25rem;
+            margin-bottom: 1rem;
+        }
+
+        &--publish {
+            height: 2.5rem;
+            width: -webkit-fill-available;
+            background-color: $primary-color--blue;
+            border: none;
+            color: $primary-color--white;
+            border-radius: 0.25rem;
+            background-image: url('../../assets/icons/publish.svg');
+            background-repeat: no-repeat;
+            background-position: 0.75rem 50%;
+            background-size: 1rem;
+            text-transform: uppercase;
+            @include labels-buttons-mobile;
+            font-size: 0.8125rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        &--cancel {
+            height: 2.5rem;
+            width: -webkit-fill-available;
+            background-color: $primary-color--white;
+            border: none;
+            color: $primary-color--blue;
+            border-radius: 0.25rem;
+            text-transform: uppercase;
+            @include labels-buttons-mobile;
+            font-size: 0.8125rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+    }
+
+    @media only screen and (min-width: $tablet-breakpoint) {
+        padding: 36px 36px 24px 36px;
+        @include body-copy;
+
+        &__header {
+            @include page-header;
+            padding-bottom: 24px;
+            margin-bottom: 24px;
+            border-bottom: 1px solid $secondary-color--mercury;
+        }
+
+        &__form {
+
+            &--label {
+                @include labels-buttons;
+                font-weight: 600;
+            }
+
+            &--image {
+                width: 50vw;
+                margin-bottom: 24px;
+            }
+
+            &--single-field {
+                padding-left: 14px;
+                margin-bottom: 24px;
+            }
+
+            &--multiple-field {
+                margin-bottom: 24px;
+                height: 6rem;
+            }
+
+            &--buttons {
+                display: flex;
+                flex-direction: row-reverse;
+                border-top: 1px solid $secondary-color--mercury;
+                padding-top: 24px;
+            }
+
+            &--publish {
+                width: 150px;
+                padding: 0 32px;
+                @include labels-buttons;
+                font-weight: 600;
+            }
+
+            &--cancel {
+                @include labels-buttons;
+                width: 150px;
+                padding: 0 32px;
+                font-weight: 600;
+            }
+        }
+    }
+
+    @media only screen and (min-width: $desktop-breakpoint) {
+        padding: 36px 9.375rem 24px 9.375rem;
+
+    &__form {
+
+        &--image {
+            width: 25vw;
+        }
+    
+        &--data {
+            display: flex;
+            flex-direction: row;
+
+        }
+
+        &--text {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            margin-left: 24px; 
+            margin-bottom: 24px;
+        }
+
+        &--multiple-field {
+            height: 85px;
+            margin-bottom: 0;
+        }
+
+}
+
+    }
+
+}
+
+input[type="text"] {
+    @include body-copy-mobile;
+    color: $primary-color--black;
+
+    /*  @media only screen and (min-width: $tablet-breakpoint) {
+        @include body-copy;
+        box-sizing: border-box;
+        padding: 0.375rem 0 0.375rem 1rem;
+    } */
+}
+
+input::placeholder {
+    @include body-copy-mobile;
+    color: $primary-color--black;
+    /* transform: translateY(10%); */
+
+    /* @media only screen and (min-width: $tablet-breakpoint) {
+        @include body-copy;
+         transform: translateY(10%); 
+    } */
+}
+
+input[type=text]:focus {
+    border: 0.125rem solid $primary-color--blue;
+    outline: none;
+}
+
+textarea[type="text"] {
+    @include body-copy-mobile;
+    color: $primary-color--black;
+    padding: 0.75rem;
+
+    /* @media only screen and (min-width: $tablet-breakpoint) {
+        @include body-copy;
+        box-sizing: border-box;
+        padding: 0.375rem 0 0.375rem 1rem;
+    } */
+}
+
+textarea::placeholder {
+    @include body-copy-mobile;
+    color: $primary-color--black;
+    transform: translateY(10%);
+
+    /* @media only screen and (min-width: $tablet-breakpoint) {
+        @include body-copy;
+        transform: translateY(10%);
+    } */
+}
+
+textarea[type=text]:focus {
+    border: 0.125rem solid $primary-color--blue;
+    outline: none;
+}

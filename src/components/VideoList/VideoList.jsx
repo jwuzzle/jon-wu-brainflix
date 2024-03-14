@@ -9,7 +9,7 @@ const VideoList = ({filteredNextVideos }) => {
   return (
     <div className="card-list">
       <p className="card-list__heading">Next Videos</p>
-      {filteredNextVideos.map((video) => (
+      {filteredNextVideos.map((video) => ( //do you need to have return () here?
         <Link className="card-list__link" to={`/videos/${video.id}`} key={video.id}><VideoCard
           id={video.id}
           image={video.image}

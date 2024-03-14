@@ -11,3 +11,6 @@ button:hover {
     background-color: $secondary-color--darkblue;
 }
 
+.noHover {
+    pointer-events: none;
+}
