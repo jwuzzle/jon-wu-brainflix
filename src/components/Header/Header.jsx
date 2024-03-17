@@ -7,11 +7,13 @@ const Header = () => {
   return (
     <header className="navbar">
       <div className="navbar__logo-container">
-        <Link to={"/"}><img
-          className="navbar__logo"
-          src={brainflixLogo}
-          alt="brainflix logo"
-        /></Link>
+        <Link to={"/"}>
+          <img
+            className="navbar__logo"
+            src={brainflixLogo}
+            alt="brainflix logo"
+          />
+        </Link>
       </div>
       <div className="navbar__features">
         <input
@@ -20,7 +22,9 @@ const Header = () => {
           id="search"
           placeholder="Search"
         />
-        <Link to={"/upload"}><button className="navbar__search-button">Upload</button></Link>
+        <Link to={"/upload"}>
+          <button className="navbar__search-button">Upload</button>
+        </Link>
         <div className="navbar__profile">
           <img
             className="navbar__profile-picture"

@@ -2,9 +2,8 @@ import React, { useState } from "react";
 import "./VideoReviews.scss";
 
 const VideoReviews = ({ mainVideo }) => {
-
   return (
-    <div className="reviews">
+    <section className="reviews">
       <ul className="reviews__list">
         {mainVideo.comments.map((video) => (
           <li className="reviews__section" key={video.id}>
@@ -27,7 +26,7 @@ const VideoReviews = ({ mainVideo }) => {
           </li>
         ))}
       </ul>
-    </div>
+    </section>
   );
 };
 

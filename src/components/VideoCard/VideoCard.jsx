@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./VideoCard.scss";
 
-const VideoCard = ({ image, title, author, video }) => {
+const VideoCard = ({ image, title, author }) => {
   return (
     <div>
       <div className="card">

@@ -6,7 +6,7 @@ const VideoUploadPage = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    alert("Successful Upload!");
+    alert("You did it! The video has launched! 🚀");
     window.location = "/";
   };
 

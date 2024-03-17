@@ -10,7 +10,7 @@ const SelectedVideoDetails = ({ mainVideo }) => {
   );
 
   return (
-    <div className="video-details">
+    <section className="video-details">
       <h1 className="video-details__title">{mainVideo.title}</h1>
       <div className="video-details__subsection">
         <div className="video-details__subsection--left">
@@ -29,7 +29,7 @@ const SelectedVideoDetails = ({ mainVideo }) => {
         </div>
       </div>
       <p className="video-details__description">{mainVideo.description}</p>
-    </div>
+    </section>
   );
 };
 

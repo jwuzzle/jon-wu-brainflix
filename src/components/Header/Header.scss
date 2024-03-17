@@ -28,8 +28,8 @@
 
     &__search-bar {
         height: 2.25rem;
-        border-radius: 0.25rem;
-        border: 0.0625rem solid $secondary-color--mercury;
+        border-radius: 4px;
+        border: 1px solid $secondary-color--mercury;
         background-image: url('../../assets/icons/search.svg');
         background-repeat: no-repeat;
         background-position: 0.75rem 50%;
@@ -44,7 +44,7 @@
     &__search-button {
         height: 2.5rem;
         width: 100%;
-        border-radius: 0.25rem;
+        border-radius: 4px;
         background-color: $primary-color--blue;
         color: $primary-color--white;
         border: none;
@@ -125,7 +125,6 @@ input[type=text] {
     @media only screen and (min-width: $tablet-breakpoint) {
         @include body-copy;
         box-sizing: border-box;
-        /* padding-left: 2.25rem; */
     }
 }
 
@@ -139,6 +138,6 @@ input::placeholder {
 }
 
 input[type=text]:focus {
-    border: 0.125rem solid $primary-color--blue;
+    border: 2px solid $primary-color--blue;
     outline: none;
 }

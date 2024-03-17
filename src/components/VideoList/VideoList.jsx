@@ -3,24 +3,29 @@ import VideoCard from "../VideoCard/VideoCard";
 import "./VideoList.scss";
 import { Link } from "react-router-dom";
 
-const VideoList = ({filteredNextVideos }) => {
+const VideoList = ({ filteredNextVideos }) => {
   console.log("these are the non-selected videos:", filteredNextVideos);
 
   return (
-    <div className="card-list">
+    <section className="card-list">
       <p className="card-list__heading">Next Videos</p>
-      {filteredNextVideos.map((video) => ( //do you need to have return () here?
-        <Link className="card-list__link" to={`/videos/${video.id}`} key={video.id}><VideoCard
-          id={video.id}
-          image={video.image}
-          title={video.title}
-          author={video.channel}
-          video={video}
-        /></Link>
+      {filteredNextVideos.map((video) => (
+        <Link
+          className="card-list__link"
+          to={`/videos/${video.id}`}
+          key={video.id}
+        >
+          <VideoCard
+            id={video.id}
+            image={video.image}
+            title={video.title}
+            author={video.channel}
+            video={video}
+          />
+        </Link>
       ))}
-    </div> 
+    </section>
   );
 };
 
 export default VideoList;
-

@@ -54,22 +54,22 @@ const MainVideoPage = () => {
     (video) => video.id !== mainVideo.id
   );
 
-  if (!mainVideo) return ""; //ensure pages waits until there is a mainVideo from the api call before it renders 
+  if (!mainVideo) return ""; //ensure pages waits until there is a mainVideo from the api call before it renders
 
   return (
-    <>
+    <main>
       <SelectedVideo mainVideo={mainVideo} />
-      <div className="page-bottom">
-        <div className="page-bottom__left">
+      <section className="page-bottom">
+        <section className="page-bottom__left">
           <SelectedVideoDetails mainVideo={mainVideo} />
           <VideoReviewForm mainVideo={mainVideo} />
           <VideoReviews mainVideo={mainVideo} />
-        </div>
-        <div className="page-bottom__right">
+        </section>
+        <section className="page-bottom__right">
           <VideoList filteredNextVideos={filteredNextVideos} />
-        </div>
-      </div>
-    </>
+        </section>
+      </section>
+    </main>
   );
 };
 
