@@ -1,14 +1,25 @@
 import videoPreview from "../../assets/images/Upload-video-preview.jpg";
 import "./VideoUploadPage.scss";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const VideoUploadPage = () => {
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
     alert("You did it! The video has launched! 🚀");
     window.location = "/";
-  };
+
+    try {
+      await axios.post("http://localhost:8000/videos/", {
+        title: event.target.title.value,
+        description: event.target.description.value, 
+      });
+      event.target.reset();
+    }catch(error) {
+      console.log(error);
+    }
+    }
 
   return (
     <section className="upload">
@@ -58,5 +69,6 @@ const VideoUploadPage = () => {
     </section>
   );
 };
+  
 
 export default VideoUploadPage;

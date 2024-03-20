@@ -19,8 +19,9 @@ const MainVideoPage = () => {
   const fetchVideoDetails = async () => {
     try {
       const detailsResponse = await axios.get(
-        `https://unit-3-project-api-0a5620414506.herokuapp.com/videos/${videoId}?api_key=d76a25f6-c65b-49f6-96fa-5d82d3c84842`
-      );
+        `http://localhost:8000/videos/${videoId}` //store this in a variable in the .env file
+        /* `https://unit-3-project-api-0a5620414506.herokuapp.com/videos/${videoId}?api_key=d76a25f6-c65b-49f6-96fa-5d82d3c84842` */
+      ); 
       console.log("this is the data for one video:", detailsResponse.data);
       setMainVideo(detailsResponse.data);
     } catch (error) {
@@ -37,7 +38,8 @@ const MainVideoPage = () => {
   const fetchVideos = async () => {
     try {
       const response = await axios.get(
-        "https://unit-3-project-api-0a5620414506.herokuapp.com/videos?api_key=d76a25f6-c65b-49f6-96fa-5d82d3c84842"
+        "http://localhost:8000/videos/"
+        /* "https://unit-3-project-api-0a5620414506.herokuapp.com/videos?api_key=d76a25f6-c65b-49f6-96fa-5d82d3c84842" */
       );
       console.log("this is the video api data:", response.data);
       setNextVideos(response.data);
