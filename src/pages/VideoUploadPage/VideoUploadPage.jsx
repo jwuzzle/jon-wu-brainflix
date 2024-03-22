@@ -3,6 +3,8 @@ import "./VideoUploadPage.scss";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
+const URL = import.meta.env.VITE_APP_BASE_URL;
+
 const VideoUploadPage = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -11,13 +13,13 @@ const VideoUploadPage = () => {
     window.location = "/";
 
     try {
-      await axios.post("http://localhost:8000/videos/", {
+      await axios.post(`${URL}/videos/`, {
         title: event.target.title.value,
         description: event.target.description.value, 
       });
       event.target.reset();
     }catch(error) {
-      console.log(error);
+      console.error(error);
     }
     }
 

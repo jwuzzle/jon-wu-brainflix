@@ -17,7 +17,7 @@ const VideoList = ({ filteredNextVideos }) => {
         >
           <VideoCard
             id={video.id}
-            image={video.image} //{`${URL}${video.image}`}
+            image={video.image} 
             title={video.title}
             author={video.channel}
             video={video}

@@ -7,6 +7,8 @@ import SelectedVideoDetails from "../../components/SelectedVideoDetails/Selected
 import VideoReviewForm from "../../components/VideoReviewForm/VideoReviewForm";
 import VideoReviews from "../../components/VideoReviews/VideoReviews";
 
+const URL = import.meta.env.VITE_APP_BASE_URL
+
 const MainVideoPage = () => {
   const [mainVideo, setMainVideo] = useState(null);
   let { videoId } = useParams();
@@ -19,13 +21,12 @@ const MainVideoPage = () => {
   const fetchVideoDetails = async () => {
     try {
       const detailsResponse = await axios.get(
-        `http://localhost:8000/videos/${videoId}` //store this in a variable in the .env file
-        /* `https://unit-3-project-api-0a5620414506.herokuapp.com/videos/${videoId}?api_key=d76a25f6-c65b-49f6-96fa-5d82d3c84842` */
+        `${URL}/videos/${videoId}`
       ); 
-      console.log("this is the data for one video:", detailsResponse.data);
       setMainVideo(detailsResponse.data);
     } catch (error) {
-      console.log(error);
+      console.error(error);
+      
     }
   };
 
@@ -38,13 +39,11 @@ const MainVideoPage = () => {
   const fetchVideos = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:8000/videos/"
-        /* "https://unit-3-project-api-0a5620414506.herokuapp.com/videos?api_key=d76a25f6-c65b-49f6-96fa-5d82d3c84842" */
+        `${URL}/videos/`
       );
-      console.log("this is the video api data:", response.data);
       setNextVideos(response.data);
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
 

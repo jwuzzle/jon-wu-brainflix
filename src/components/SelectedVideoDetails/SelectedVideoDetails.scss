@@ -121,6 +121,10 @@
         margin: 2.25rem 0 0 0;
         @include body-copy;
 
+        &__title {
+           padding-right: 1.5rem,
+        }
+
         &__subsection {
             padding: 1rem 1.5rem 0.625rem 0;
         }
